@@ -1,131 +1,314 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Introduction
 
-Welcome USER_NAME,
+Melys is an e-commerce business, located in South Wales, creating honey and beeswax products. Please note some of these products are not yet created by Melys and have been created for the purpose of this project. The purpose of this website is to sell Melys’ range of products and to create a portfolio for its owner. Melys will have a personable feel to the website, emphasising that this is a small, ethical, and local business. Users can buy a range of products from the website, such as honey or candles, and users can find out more about the bees and owner that created the products. Melys also offers beekeeping workshops, presented by the owner of Melys, and users can sign up through the website if interested.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# User Experience, Research and Design
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Strategy
 
-## Gitpod Reminders
+The purpose of this website is to primarily sell products and promote the site owner’s beekeeping business. For this, the website should have a beekeeping ‘feel’ to it, offering a personable service. In order to understand and create the best user experience, I looked at several honey/beekeeping related websites in order to understand best practice. Here are a couple that helped me in my research:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+[Honey Bee Beautiful](https://www.honeybeebeautiful.co.uk/collections/)
+gave me a good idea of how I would like my products to appear on the page, along with the language to use in regards to products and descriptions.
 
-`python3 -m http.server`
+[Bees In The D](https://beesinthed.com/) is a NGO that has a focus on “saving the bees”, but it also sells a range of products such as honey, books, clothes, and tours. Its focus on educating audiences prior to selling is useful when creating Melys, as it’s important for users to initially know a little about the business and its owner and bees, before buying its products. Melys should build a level of reliability in order to ensure users both invest in the business through buying products, but also emotionally investing in Melys.
 
-A blue button should appear to click: _Make Public_,
+Melys’ target audience, then, are both potential beekeepers and people interested in buying beekeeping products. While, it’s important to entice users through promoting beekeeping, it’s important not to alienate users either by focusing only on beekeeping. The website should have a good e-commerce experience by providing an easy, efficient navigation and checkout system for all users, just like the websites listed above.
 
-Another blue button should appear to click: _Open Browser_.
+Of course, when researching this website, the most influential and important factor in the design and goals of this website was the business owner. Melys’ owner stated that her main goals for this site are the following:
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+“Sell my products, especially my honey and candles. To promote beekeeping as a hobby and increase interest. I’d like to position myself within the beekeeping community.” 
 
-A blue button should appear to click: _Make Public_,
+It is imperative, then, that these needs are considered and met when designing and implementing this website.
 
-Another blue button should appear to click: _Open Browser_.
+## Scope
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The scope of this project is partly dependent on the project requirements for [Code Institute](https://learn.codeinstitute.net/courses/course-v1:codeinstitute+DIWAD_MS4+2022_Q1/courseware/5cc55f6df9fe41cc8dcb4d665a251ded/8341150079674a76b87da0143c45f6f9/) and partly dependent on the site owner’s goals as this will be used as a functional e-commerce website.
 
-To log into the Heroku toolbelt CLI:
+Code Institute has required the following for this website:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+“
+1. Django Full Stack Project: Build a Django project backend by a relational database to create a website that allows users to store and manipulate data records about a particular domain.
+2. Multiple Apps: The project must be a brand new Django project, composed of multiple apps..
+3. Data Modeling: Put some effort into designing a relational database schema well-suited for your domain.
+4. Create at least 2 custom django models beyond the examples shown on the course
+5. User Authentication: The project should include an authentication mechanism, allowing a user to register and log in.
+6. User Interaction: Include at least one form with validation that will allow users to create and edit models in the backend.
+7. Use of Stripe: At least one of your Django apps should contain some e-commerce functionality using Stripe. 
+8. Structure and Navigation: Incorporate a main navigation menu and structured layout”
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+Therefore, the website will have a relational database with custom django models, user authentication, and a payment system. Melys gives a perfect opportunity to do this, offering beekeeping products to sell and workshops for users to apply to. Authentication becomes a necessary component as users who wish to purchase something must log in first.
 
-### Connecting your Mongo database
+## User Stories
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+Here are the User Stories:
 
-------
+![User Stories](media/docs/melysuserstories.webp)
 
-## Release History
+## Structure
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+In order to ensure good user experience, navigating Melys is clear and easy. This ease encourages users to learn quickly about the business and navigate their way efficiently to products and workshops. Below is the User Journey for Melys:
 
-**June 18, 2024,** Add Mongo back into template
+![User Journey](media/docs/userjourney.webp)
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+As seen above, users are able to access home, products, about, and workshop pages without needing to log in. This offers users an opportunity to initially learn about the business and its services without expectation to invest in the business itself. However, users must sign up/ log in in order to checkout, incentivising users to create an account, further supporting Melys.
 
-**May 28 2024:** Fix Mongo and Links installs
+## Skeleton
 
-**April 26 2024:** Update node version to 16
+## Wireframes
 
-**September 20 2023:** Update Python version to 3.9.17.
+Here are the Wireframes:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+This is the Home Page:
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Home Page](media/docs/wireframes/home.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+This is the Log In page:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Log in](media/docs/wireframes/login.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+This is the About page:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![About](media/docs/wireframes/about.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+This is the All Products page:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![All Products](media/docs/wireframes/allproducts.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+This is the product details page:
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Product page](media/docs/wireframes/productpage.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+This is the Workshop page:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Workshop](media/docs/wireframes/workshop.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+My Account page:
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![My Account](media/docs/wireframes/myaccount.png)
 
-------
+This is the shopping bag:
 
-## FAQ about the uptime script
+![Shopping Bag](media/docs/wireframes/basket.png)
 
-**Why have you added this script?**
+This is the Checkout page:
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Check Out](media/docs/wireframes/checkout.png)
 
-**How will this affect me?**
+This is the Thank you page:
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Thank you](media/docs/wireframes/thankyou.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Surface
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- The honey and candle images are products by Melys and were taken by the store owner
 
-**So….?**
+- The lip balm and soap images were taken from [Unsplash](https://unsplash.com/)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- The lip balm was taken by myself
 
-**Can I opt out?**
+- All photos featured on the About and Workshop page are owned by the store owner
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- The logo was created by the store owner using [Canva](https://www.canva.com/en_gb/)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Features and Testing
 
-**Anything more?**
+Melys’ features considers both the project requirements and user stories.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+**Logo:**
 
----
+This logo was created by the business owner. It shows a digital drawing of a Lovespoon. The title, “Melys” uses font “Parisienne”, using [Canva](https://www.canva.com/en_gb/). The italicised style of this font allows for a more relaxed approach within the branding, making the website feel more personal.
 
-Happy coding!
+**Favicon:**
+
+The Favicon used is the Lovespoon logo. The Lovespoon logo is a fundamental component of this site as it signifies Melys’ values: both Welshness and beekeeping. Lovespoons are a traditional Welsh gift, and this depiction of one has a honey dipper at the end of it.
+
+![Favicon](media/docs/screenshots/favicon.png)
+
+**Main navigation:**
+
+The navigation is easy to use and filters products into necessary categories to make for a better user experience. Users are also able to search products or categories via the search panel.
+
+![Main-Nav](media/docs/screenshots/header.png)
+
+The search panel fulfills user stories "Search for a product by name or description (14)" and "See what I've searched for and the number of results (15)"
+
+**Mobile navigation:**
+
+On mobile devices, the navigation becomes a burger menu, ensuring users are not overwhelmed by the navigation system when trying to navigate the website.
+
+![Mobile-nav](media/docs/screenshots/mobilenav.png)
+
+**Sign Up/Log In:**
+
+Users must create an account if needing to checkout. This is to incentivise the users to create an account as well as providing an efficient way for returning customers to checkout.
+
+![Sign-up](media/docs/screenshots/signup.png)
+
+**Shop now/Home page:**
+
+The Shop Now page or the Home Page is the landing point for the website. When the logo is clicked on any site page, it will lead the user back to here. The Home Page shows an image of beekeeping with a small sentence about Melys, before offering users a link to “Shop Now”, leading to the All Products page.
+
+![Home](media/docs/screenshots/landingpage.png)
+
+This fulfills the following user stories- "Register for an account,
+Login and logout of own account, Recover my passwork in case I forget it,
+Have a personalized user profile"
+
+**All Products:**
+
+The All Products page features each product’s name, image, rating, and price. This page can be sorted by products’ name (A-Z, Z-A), Category, and price. When users click on a product, users are sent to the Product Details Page.
+
+![AllProducts](media/docs/screenshots/allproductspage.png)
+
+This achieves User Story ID 1 - "View a list of products".
+
+**Product details page:**
+
+The product details page shows a single product’s necessary details: image, name, description, rating, and price. Users are able to choose their desired quantity before adding to their shopping bag.
+
+![ProductDetail](media/docs/screenshots/proddetail.png)
+
+This achieves User Story ID 2 - "View individual product details" and ID 16 "Select the quantity of a product when purchasing".
+
+**Sorting**
+
+Users are able to sort products as seen below:
+
+![Sorting](media/docs/screenshots/sorting.png)
+
+This fulfills the following user stories:
+"Sort the list of available products, Sort a specific category of product, Sort multiple categories of products simultaneously"
+
+**Shopping bag:**
+
+The shopping bag is featured on the top right of the website, regardless of device. When a product is successfully added, a notification will appear below the bag to notify the user. The shopping back includes a small image of the product(s) in the bag, product(s) name, and the total cost of the product(s).
+
+The Shopping bag fulfils User ID 4 - "Easily view the total of my purchases", 17 - "View items in my bag to be purchased", and 18 - "Adjust the quantity of individual items in my bag".
+
+![Bag](media/docs/screenshots/shoppingbag.png)
+
+**Checkout:**
+
+The Checkout Page includes a summary of the user’s order, delivery details, and payment details. Following checkout, users are taken to an Order Confirmation/Thank You page.
+
+![Checkout](media/docs/screenshots/ordersummary.png)
+
+**Order Confirmation Page:**
+
+![Order-confirm](media/docs/screenshots/orderconfirmation.png)
+
+The checkout process fulfills the following user stories: "Easily enter my payment information", "Feel my personal and payment information is safe and secure", and "View an order confirmation after checkout".
+
+**About:**
+
+The About Page says a little about the site owner.
+This fulfils the user ID "Learn about the business and its products" and the site owner's goal "Say a little about my business and products".
+
+**Workshops:**
+
+The Workshop page shows available workshops hosted by Melys. This includes an image, name, description, time, date, and duration. Users click the "Apply Now" button which takes them to the Workshop Apply page.
+
+![Workshops](media/docs/screenshots/workshops.png)
+
+This fulfils the User ID 3 - "Learn about the business and its products" and the store owner's goal "Promote workshops for users to attend".
+
+**Apply Now:**
+
+The Apply Now asks users to fill our its necessary fields to express interest in their desired workshop.
+
+![Apply](media/docs/screenshots/applynow.png)
+
+The workshops and apply now page fulfills user story 5 - "View and apply for workshops".
+
+**Product Management:**
+
+Through Product Management, the site owner is able to easily and efficiently enter new products for their site. This gives the site owner ownership over their own business and allows them to update the site according to their needs.
+
+![Management](media/docs/screenshots/prodmanagement.png)
+
+This fulfills the user stories "Add a product", "Edit/update a product", and "Delete a product".
+
+## Future features
+
+- Ideally, this website would have an alternative version where all text is Welsh as this really pushes the values of the site owner.
+
+## Database schema:
+
+Here is the entity relationship diagram:
+
+![Database schema](media/docs/dbdiagram.webp)
+
+As seen above, models are included for product and category, as well as for the workshops page. Workshop models include fields such as name and description of workshops and can be altered by the store owner. This allows efficiency in presenting information to users who are interested in the workshops, as well as providing efficiency for the store owner to add key information. The WorkshopApply model allows any user to express interest and apply for a workshop, purposefully not restricting potential interest in beekeeping as promoting beekeeping is important to the store owner.
+
+## Unfixed Bugs
+
+This site has been tested using multiple devices, including desktop, tablet (iPad), and mobiles (iPhone11 and Android). Dev Tools have been used throughout the creation of this site in order to understand appearance and functionality on other devices. Unfortunately, through testing I have seen that there are issues with the styling of the overlay, causing the background image to overhang in some areas on small screens. While I have created an alt-overlay to attempt to combat this on some pages, the alternative version would only show the overlay on some pages, and therefore, has been used sparingly. This is something I will fix, but have no time to do so.
+
+## Fixed Bug
+
+During the deployment process, the deployed site showed to be complletely unstyled, including the Django Admin Panel. After sifting through my keys and settings, I narrowed down the issue to an AWS issue. I combed through the tutorials to understand where the issue was and eventually found I had accidentally ticked a box not allowing public access, changing the entire site's styling.
+
+## Code validation
+
+- No errors found in [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) 
+![W3CCSS](media/docs/cssvalidator.png)
+- [JsHint](https://jshint.com/) showed me a missing ; in my stripe_elements.js file, this has been resolved.
+- [W3c HTML](https://validator.w3.org/) showed duplicate rel for stylesheet, this has been resolved.
+- [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?pli=1) gave the following score:
+![Lighthouse](media/docs/lighthouse.png)
+
+## Deployment
+
+This application is deployed with Heroku. Here are the steps to deploy to Heroku:
+
+- Log in to Heroku and choose New App
+Choose a name and the region closest to you.
+- Open Settings. Add the config var DATABASE_URL and copy your db URL from ElephantSQL. If you do not have your db attached, you must do the following: Sign up to ElephantSQL, create a new instance, give it a name and select region closest to you, click "Create Instance". Navigate to the start page and click on your database, now you can copy the URL.
+- In the terminal, type "pip3 install dj_database_url==0.5.0 psycopg2" to connect to your external db.
+- Update requirements.txt through "pip freeze > requirements.txt"
+- Import dj_database_url underneath import for os in settings.py
+- In Settings, find the DATABASES section and update to this code: "DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }". Do not commit this file with your db in the string.
+- Run "python3 manage.py showmigrations". You should see a list of all migrations, with none checked off.
+- Migrate your db models using "python3 manage.py migrate"
+- Load in the fixtures e.g. "python3 manage.py loaddata categories"
+- Create superuser for your db "python3 manage.py createsuperuser"
+- Delete the db URL from your settings once more to avoid exposing our db when pushing to Github
+- Back on ElephantSQL, select "BROWSER" then click Table queries, then auth-user. If you click "Execute", your newly created superuser details should display.
+
+Now let's run migrations:
+- Create a file names "Procfile" in the root directory of your project and as "web: gunicorn projectname.wsgi"
+- In settings.py add ['yourappname.heroku.com', 'localhost] to "ALLOWED_HOSTS". Commit and push these changes
+- In Heroku settings, update your config vars to include your AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY (both from AWS in CSV download). You must have your DATABASE_URL (from ElephantSQL as seen above), EMAIL_HOST_PASSWORD and EMAIL_HOST_USER, and your SECRET_KEY. If using Stripe, you must have your STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY from the Stripe dashboard, and the "STRIPE_WH_SECRET" from the Webhooks Endpoint. USE_AWS should be set to True.
+- Once the project is completed, set DEBUG = FALSE in settings.py
+- On Heroku, select deploy and connect to your Github. Search for your repository and connect. Click "Deploy Branch". The log will show your project building.
+- Click "open app" at the top of the page to view your deployed app.
+
+### Technologies used
+
+This site uses HTML, CSS, JS, and Python (Django).
+
+## Credits, Sources & Acknowledgements
+
+- Of course, [CodeInstitute](https://learn.codeinstitute.net/dashboard) has been monumental in creating this site and every site I have and will make. All of my coding knowledge comes from Code Insitute. For this project, the Boutique Ado Walkthrough was particularly useful.
+- [Css tricks](https://css-tricks.com/) as found in base.css
+- [Font Awesome](https://fontawesome.com/)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Heroku](https://dashboard.heroku.com/apps)
+- I used [Lucid](https://www.lucidchart.com/pages/) to create the DB schema, wireframes, and user journey
+- [Google Fonts](https://fonts.google.com/selection/embed)
+- [Google Dev Tools](https://developer.chrome.com/docs/devtools) has been significantly useful in consistent testing.
+- [Amazon Web Services](https://aws.amazon.com) was used to create a bucket and store static files/images.
+- [Stripe](https://stripe.com/gb) has been used to collect payment details.
+- The logo was created by the store owner, using [Canva](https://www.canva.com/en_gb/).
+- [Unsplash](https://unsplash.com/) has been used for the soap and lip balm images. All other images were taken either by myself or by the store owner and I have been given permission to share these.
+- [Bootstrap](https://getbootstrap.com/) for styling.
+- The favicon was created [here](https://favicon.io/).
+- [Facebook](https://facebook.com/)
+- [Instagram](https://www.instagram.com/)
+- [Twitter/x](https://twitter.com/?lang=en)
+- [YouTube](https://www.youtube.com/)
+
+Thank you to my mentor, Martina, who is always both supportive and efficient. Thank you to the store owner, Elisha, for trusting me with Melys. Thank you to my mum and brother for helping despite not knowing these languages. Lastly, thank you to Code Institute for the knowledge I now have.
