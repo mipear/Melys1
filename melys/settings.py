@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['8000-mipear-melys-yhp8si6ogfj.ws-eu110.gitpod.io']
-ALLOWED_HOSTS = ['melys-7df952eae326.herokuapp.com', 'localhost', 'https://mipear-melys1-ffmhrjtug34.ws.codeinstitute-ide.net/']
+ALLOWED_HOSTS = ['melys-7df952eae326.herokuapp.com', 'localhost', '8000-mipear-melys1-ffmhrjtug34.ws.codeinstitute-ide.net']
 
 
 # Application definition
