@@ -1,6 +1,10 @@
 # Introduction
 
+Please see the old repository for Melys to find previous commits: [Melys repo](https://github.com/mipear/Melys)
+
 Melys is an e-commerce business, located in South Wales, creating honey and beeswax products. Please note some of these products are not yet created by Melys and have been created for the purpose of this project. The purpose of this website is to sell Melys’ range of products and to create a portfolio for its owner. Melys will have a personable feel to the website, emphasising that this is a small, ethical, and local business. Users can buy a range of products from the website, such as honey or candles, and users can find out more about the bees and owner that created the products. Melys also offers beekeeping workshops, presented by the owner of Melys, and users can sign up through the website if interested.
+
+Here is the [live website](melys-7df952eae326.herokuapp.com/)
 
 # User Experience, Research and Design
 
