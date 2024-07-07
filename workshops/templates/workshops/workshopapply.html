@@ -30,7 +30,7 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
-                <form method="post" enctype="mutlipart/form-data" action="{% url 'thankyou' %}">
+                <form method="post" enctype="mutlipart/form-data" action="{% url 'workshopapply' %}">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="submit-button text-right mt-5 mb-2">                    
