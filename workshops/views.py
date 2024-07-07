@@ -22,8 +22,6 @@ def workshopapply(request):
         if form.is_valid():
             form.save()
             return redirect('thankyou')
-        else:
-            messages.error(request, 'Failed to apply. Please ensure the form is valid.')
     else:
         form = ApplyForm()
     
